@@ -42,6 +42,15 @@ export default function Index() {
           </Text>
         </Pressable>
       </Link>
+
+      {/* dynamic routes */}
+      <Link href={{ pathname: "/proverbs/[id]", params: { id: "1" } }} asChild>
+        <Pressable className="bg-gray-400 w-[80vw] mt-2 p-3 rounded">
+          <Text className="text-white font-semibold text-center">
+            Go to /proverbs/1
+          </Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }

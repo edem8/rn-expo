@@ -1,7 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import AppText from "@/components/AppText";
-import Button from "@/components/Button";
 import { Link, useLocalSearchParams } from "expo-router";
 
 export default function Second() {
