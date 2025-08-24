@@ -3,13 +3,12 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import "../global.css";
 
-export default function _layout() {
+export default function RootLayout() {
   return (
     <React.Fragment>
       <StatusBar style="auto" />
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+        <Stack.Screen name="(protected)" options={{ headerShown: false }} />
       </Stack>
     </React.Fragment>
   );
