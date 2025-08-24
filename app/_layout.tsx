@@ -24,6 +24,8 @@ export default function RootLayout() {
         <Tabs.Screen
           name="second"
           options={{
+            headerShown: false,
+            
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="numeric-2-box-outline"

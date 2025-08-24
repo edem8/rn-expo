@@ -7,8 +7,8 @@ export default function IndexScreen() {
     <View className="flex-1 items-center p-4 justify-center">
       <Text className="mb-4">second index</Text>
 
-      {/* Replace */}
-      <Link href="/second" push asChild>
+      {/* Path to nested */}
+      <Link href="/second/nested" push asChild>
         <Pressable className="bg-red-500 w-[80vw] mt-2 p-3 rounded">
           <Text className="text-white font-semibold text-center">
             Path to nested
