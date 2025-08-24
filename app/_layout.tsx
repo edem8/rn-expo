@@ -2,6 +2,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import "../global.css";
 
 export default function RootLayout() {
   return (
@@ -9,8 +10,9 @@ export default function RootLayout() {
       <StatusBar style="auto" />
       <Tabs screenOptions={{ tabBarActiveTintColor: "teal" }}>
         <Tabs.Screen
-          name="index"
+          name="(home)"
           options={{
+            headerShown: false,
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="numeric-1-box-outline"
@@ -25,7 +27,7 @@ export default function RootLayout() {
           name="second"
           options={{
             headerShown: false,
-            
+
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="numeric-2-box-outline"
@@ -52,7 +54,7 @@ export default function RootLayout() {
           options={{
             tabBarBadge: 2,
             tabBarBadgeStyle: {
-              backgroundColor: "red"
+              backgroundColor: "red",
             },
             // href: null, //Hide the screen from the tab bar
             tabBarIcon: ({ color, size }) => (
