@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 
 const proverbs = [
   {
@@ -11,7 +11,7 @@ const proverbs = [
   {
     id: 1,
     proverb: "The early bird catches the worm.",
-    source: "English Proverb",
+    source: "Toa chang",
   },
   {
     id: 2,
@@ -36,6 +36,7 @@ export default function ProverbID() {
 
   return (
     <View className="flex-1 items-center  justify-center">
+      <Stack.Screen options={{title: proverb?.source}} />
       <Text>{proverb?.proverb}</Text>
       <Text>~{proverb?.source}</Text>
     </View>

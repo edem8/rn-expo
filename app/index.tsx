@@ -52,7 +52,13 @@ export default function Index() {
       </Link>
 
       {/* Nested dynamic routes */}
-      <Link href={{ pathname:"/products/[category]/[proudctId]", params: { category:"shoes", proudctId: "1" } }} asChild>
+      <Link
+        href={{
+          pathname: "/products/[category]/[proudctId]",
+          params: { category: "shoes", proudctId: "1" },
+        }}
+        asChild
+      >
         <Pressable className="bg-red-400 w-[80vw] mt-2 p-3 rounded">
           <Text className="text-white font-semibold text-center">
             Go to products/shoes/2
