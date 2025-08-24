@@ -73,7 +73,7 @@ export default function index() {
       >
         <View className="flex-1 items-center justify-center">
           <View className="rounded-lg bg-white p-12">
-            <Text>A custom Styled Modal</Text>
+            <Text>A custom Styled Native Modal</Text>
             <Pressable
               onPress={() => {
                 setModalVisible(false);
