@@ -1,9 +1,8 @@
-import Button from "@/components/Button";
 import "../global.css";
 
-import { Pressable, Text, View } from "react-native";
 import AppText from "@/components/AppText";
 import { Link } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function Index() {
   return (
@@ -48,6 +47,15 @@ export default function Index() {
         <Pressable className="bg-gray-400 w-[80vw] mt-2 p-3 rounded">
           <Text className="text-white font-semibold text-center">
             Go to /proverbs/1
+          </Text>
+        </Pressable>
+      </Link>
+
+      {/* Nested dynamic routes */}
+      <Link href={{ pathname:"/products/[category]/[proudctId]", params: { category:"shoes", proudctId: "1" } }} asChild>
+        <Pressable className="bg-red-400 w-[80vw] mt-2 p-3 rounded">
+          <Text className="text-white font-semibold text-center">
+            Go to products/shoes/2
           </Text>
         </Pressable>
       </Link>
