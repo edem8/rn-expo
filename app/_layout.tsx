@@ -8,7 +8,10 @@ export default function RootLayout() {
   return (
     <React.Fragment>
       <StatusBar style="auto" />
-      <Tabs screenOptions={{ tabBarActiveTintColor: "teal" }}>
+      <Tabs
+        screenOptions={{ tabBarActiveTintColor: "teal" }}
+        backBehavior="order" //Go back in the same order else it will defualt to the first route
+      >
         <Tabs.Screen
           name="(home)"
           options={{
