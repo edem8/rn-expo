@@ -52,15 +52,24 @@ export default function index() {
         <Text className="text-white font-semibold text-center">Open Alert</Text>
       </Pressable>
 
-      {/* Modal Open Button */}
+      {/* React Native Modal */}
       <Pressable
         onPress={() => {
           setModalVisible(true);
         }}
-        className="bg-yellow-500 w-[80vw] mt-2 p-3 rounded"
+        className="bg-lime-500 w-[80vw] mt-2 p-3 rounded"
       >
         <Text className="text-white font-semibold text-center">Open Modal</Text>
       </Pressable>
+
+      {/* Expo Route Modal */}
+      <Link href={"/modal"} asChild>
+        <Pressable className="bg-yellow-500 w-[80vw] mt-2 p-3 rounded">
+          <Text className="text-white font-semibold text-center">
+            Route to Modal
+          </Text>
+        </Pressable>
+      </Link>
 
       {/* Modal */}
       <Modal
