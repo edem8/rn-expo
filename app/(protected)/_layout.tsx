@@ -5,11 +5,12 @@ import React, { useContext } from "react";
 export default function _layout() {
   const authContext = useContext(AuthContext);
 
-  console.log(authContext.isReady);
-  console.log(authContext.isLoggedIn);
   if (!authContext.isReady) {
     return null;
   }
+
+  console.log("Ready:", authContext.isReady);
+  console.log("LoggedIn: ", authContext.isLoggedIn);
 
   if (!authContext.isLoggedIn) {
     return <Redirect href={"/login"} />;

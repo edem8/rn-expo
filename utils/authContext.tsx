@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useRouter } from "expo-router";
+import { SplashScreen, useRouter } from "expo-router";
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 type AuthState = {
   isLoggedIn: boolean;
@@ -43,11 +45,14 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   useEffect(() => {
     const getAuthFromStorage = async () => {
+      //Simulating a delay in fetching initial auth state from storage - will resolve with a splash screen
+      await new Promise((res) => setTimeout(() => res(null), 5000));
+
       try {
         const jsonValue = await AsyncStorage.getItem("auth-key");
         if (jsonValue != null) {
           const auth = JSON.parse(jsonValue);
-          setIsLoggedIn(auth);
+          setIsLoggedIn(auth.isLoggedIn);
         }
       } catch (e) {
         console.log(`Error fetching data from storage: ${e}`);
@@ -57,6 +62,12 @@ export function AuthProvider({ children }: PropsWithChildren) {
     };
     getAuthFromStorage();
   }, []);
+
+  useEffect(() => {
+    if (isReady) {
+      SplashScreen.hideAsync();
+    }
+  }, [isReady]);
   return (
     <AuthContext.Provider value={{ isReady, isLoggedIn, logout, login }}>
       {children}
