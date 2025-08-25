@@ -27,11 +27,12 @@ export const useAuthStore = create<UserState & UserActions>()(
       adminLogin: () =>
         set(() => ({
           isAdmin: true,
-          isLoggedIn:true
+          isLoggedIn: true,
         })),
       logout: () =>
         set(() => ({
           isLoggedIn: false,
+          isAdmin: false,
         })),
     }),
     {
