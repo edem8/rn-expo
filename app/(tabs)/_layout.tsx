@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Tabs } from 'expo-router'
+import { Tabs } from "expo-router";
+import React from "react";
 
 export default function _layout() {
   return (
-    <Tabs screenOptions={{tabBarActiveTintColor: "teal"}}>
-        <Tabs.Screen  name='index' options={{}} />
+    <Tabs screenOptions={{ tabBarActiveTintColor: "teal" }}>
+      <Tabs.Screen name="index" />
+      <Tabs.Screen name="settings" />
     </Tabs>
-  )
+  );
 }
