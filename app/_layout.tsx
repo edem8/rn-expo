@@ -5,15 +5,19 @@ import React from "react";
 import "../global.css";
 
 export default function RootLayout() {
+  const isloggedIn = false;
+
   return (
     <AuthProvider>
       <StatusBar style="auto" />
       <Stack>
-        <Stack.Screen
-          name="(protected)"
-          options={{ headerShown: false, animation: "none" }}
-        />
-        <Stack.Screen name="login" options={{ animation: "none" }} />
+        <Stack.Protected guard={isloggedIn}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack.Protected>
+
+        <Stack.Protected guard={!isloggedIn}>
+          <Stack.Screen name="login" />
+        </Stack.Protected>
       </Stack>
     </AuthProvider>
   );
